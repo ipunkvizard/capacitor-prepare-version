@@ -17,7 +17,7 @@ interface PackageVersion {
   build: string
 }
 
-function getAppVersion(options: CommandOptions): AppVersion {
+export function getAppVersion(options: CommandOptions): AppVersion {
   const versionPath = path.join(process.cwd(), 'version.json')
   const packageVersion = _getPackageVersion()
   const currentVersion = _getVersionJson(versionPath)
@@ -89,8 +89,4 @@ function _getVersionJson(jsonPath: string): AppVersion {
 
 function _setVersionJson(jsonPath: string, json: AppVersion) {
   fse.writeFileSync(jsonPath, JSON.stringify(json, null, 2))
-}
-
-module.exports = {
-  getAppVersion,
 }

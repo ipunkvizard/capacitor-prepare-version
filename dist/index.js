@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getAppVersion = getAppVersion;
 const node_path_1 = __importDefault(require("node:path"));
 const node_process_1 = __importDefault(require("node:process"));
 const fs_extra_1 = __importDefault(require("fs-extra"));
@@ -66,6 +67,3 @@ function _getVersionJson(jsonPath) {
 function _setVersionJson(jsonPath, json) {
     fs_extra_1.default.writeFileSync(jsonPath, JSON.stringify(json, null, 2));
 }
-module.exports = {
-    getAppVersion,
-};
